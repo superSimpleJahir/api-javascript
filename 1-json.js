@@ -1,18 +1,25 @@
-let text1 = '{ "employees" : [' +
+let jsonArray = '{ "employees" : [' +
   '{ "firstName":"John" , "lastName":"Doe" },' +
   '{ "firstName":"Anna" , "lastName":"Smith" },' +
   '{ "firstName":"Peter" , "lastName":"Jones" } ]}';
 
-// console.log(JSON.parse(text1));
+let parsejson = JSON.parse(jsonArray);
+
+console.log(parsejson.employees[2].firstName);
+console.log(parsejson.employees[1].lastName);
+
+let jsonObject = JSON.stringify(parsejson);
+
+console.log(jsonObject);
 
 
-let person = {
+let personObject = {
   FirstName: 'Jahir',
   lastName: 'Khan',
   jahir: ['Mijan', 'Jahid', 'Arif', 'Saifulla', 'tuhin'],
   johirobj: { firstName: 'Jahir', lastName: 'Mijan', score: '10.5' }
 }
-// console.log(JSON.stringify(person));
+console.log(JSON.stringify(personObject));
 
 let newObj = `{
   "firstName": "Jahir",
@@ -22,7 +29,7 @@ let newObj = `{
   "johirobj":{"firstName":"Jahir","lastName":"Mijan","score":10.5}
 }`;
 let new1Obj = JSON.parse(newObj);
-// console.log(new1Obj);
+console.log(new1Obj);
 
 let jahir1 = [
   { Name: "Jahir", FirstName: "MD jahir", lastName: "Islam" },
@@ -42,18 +49,18 @@ let jahir1 = [
 let a = { Name: "Jahir", FirstName: "MD Jahirul", lastName: "Islam" };
 
 for (const jahir in jahir1) {
-  // console.log(jahir1[jahir].FirstName);
+  console.log(jahir1[jahir].FirstName);
 }
 let c = ['Mijan', 'Jahid', 'Arif', 'Saifulla', 'tuhin'];
 let d = 'jahir';
 for (const b of d) {
-  // console.log(b);
+  console.log(b);
 }
 
 const myArray = ['js', 'rb', 'python', 'cpp', 'java'];
 
 for (const key in myArray) {
-  // console.log(myArray[key]);
+  console.log(myArray[key]);
 }
 
 let greeting = "Hello world!";
@@ -61,11 +68,11 @@ for (const greet of greeting) {
   if (greet === ' ') {
     continue
   }
-  // console.log(greet);
+  console.log(greet);
 }
 
 let jahir5 = jahir1.forEach((val, index, array) => {
-  // console.log(val);
+  console.log(val);
   return val;
 });
 
@@ -86,7 +93,7 @@ let myArray3 = [
 let e = myArray3.filter((num) => {
   return num.FirstName === 'MD mijan' && num.lastName === 'Islam';
 });
-// console.log(e);
+console.log(e);
 const arr = ["John", "Peter", "Sally", "Jane"];
 const myJSON1 = JSON.stringify(arr);
 
@@ -103,3 +110,23 @@ localStorage.setItem("testJSON", myJSON);
 let text = localStorage.getItem("testJSON");
 let obj = JSON.parse(text);
 document.getElementById("demo").innerHTML = obj.name;
+
+document.cookie = 'name=Jahir';
+document.cookie = 'name1=mizan';
+let key = prompt('Enter your key: ');
+let value = prompt('Enter your value: ');
+document.cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+console.log(document.cookie);
+
+let striong = JSON.stringify(myArray3);
+localStorage.setItem('jahir', striong);
+
+
+let getString = localStorage.getItem('jahir');
+
+let getObject = JSON.parse(getString);
+console.log(getObject);
+
+window.confirm('confirm Mr.')
+window.alert('alert Mr.')
+

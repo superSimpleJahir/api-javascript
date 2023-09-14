@@ -55,7 +55,7 @@ promisesFour
   .catch((error) => {
     console.log(error);
   })
-.finally(() => console.log('The promise is either resolved or rejected'));
+  .finally(() => console.log('The promise is either resolved or rejected'));
 
 
 // async function getAllUser() {
@@ -77,3 +77,15 @@ fetch('https://jsonplaceholder.typicode.com/users')
     console.log(data);
   })
   .catch((error) => console.log(error))
+
+
+
+function x(y) {
+  if (y < 1) return 5;
+
+  var z = x(y - 1) + 1
+  console.log(z)
+  return z
+}
+
+x(1)
